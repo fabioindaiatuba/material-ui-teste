@@ -8,7 +8,7 @@ import {
 import { Box, ThemeProvider } from "@mui/material";
 
 import { DarkTheme, LightTheme } from "./../themes";
-import { IPropsChildren } from "../PropsChildren";
+import { IPropsChildren } from "../IPropsChildren";
 
 interface IThemeContextData {
   themeName: "light" | "dark";

@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useState } from "react";
-import { IPropsChildren } from "../PropsChildren";
+import { IPropsChildren } from "../IPropsChildren";
 
 interface IDrawerOptions {
   path: string;

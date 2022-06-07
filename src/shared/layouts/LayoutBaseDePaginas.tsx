@@ -5,14 +5,15 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  Theme,
 } from "@mui/material";
-import { Theme } from "@mui/system";
-import { PropsWithChildren } from "react";
+
+import { PropsWithChildren, ReactNode } from "react";
 import { useDrawerContext } from "../contexts";
 
 interface ILayoutBaseDePaginasProps extends PropsWithChildren {
   titulo: string;
-  barraDeFerramentas?: React.ReactNode;
+  barraDeFerramentas?: ReactNode;
 }
 
 export const LayoutBaseDePaginas: React.FC<ILayoutBaseDePaginasProps> = ({
