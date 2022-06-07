@@ -12,13 +12,16 @@ import { useDrawerContext } from "../contexts";
 
 interface ILayoutBaseDePaginasProps extends PropsWithChildren {
   titulo: string;
+  barraDeFerramentas?: React.ReactNode;
 }
 
 export const LayoutBaseDePaginas: React.FC<ILayoutBaseDePaginasProps> = ({
   children,
   titulo,
+  barraDeFerramentas,
 }) => {
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
+  const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));
   const theme = useTheme();
 
   const { toggleDrawerOpen } = useDrawerContext();
@@ -29,7 +32,7 @@ export const LayoutBaseDePaginas: React.FC<ILayoutBaseDePaginasProps> = ({
         display="flex"
         alignItems="center"
         padding={1}
-        height={theme.spacing(12)}
+        height={theme.spacing(smDown ? 6 : mdDown ? 8 : 12)}
         gap={1}
       >
         {smDown && (
@@ -37,10 +40,19 @@ export const LayoutBaseDePaginas: React.FC<ILayoutBaseDePaginasProps> = ({
             <Icon>menu</Icon>
           </IconButton>
         )}
-        <Typography variant="h5">{titulo}</Typography>
+        <Typography
+          whiteSpace="nowrap"
+          overflow="hidden"
+          textOverflow="ellipsis"
+          variant={smDown ? "h5" : mdDown ? "h4" : "h3"}
+        >
+          {titulo}
+        </Typography>
       </Box>
-      <Box>Barra de ferramentas</Box>
-      <Box>{children}</Box>
+      {barraDeFerramentas && <Box>{barraDeFerramentas}</Box>}
+      <Box flex={1} overflow="auto">
+        {children}
+      </Box>
     </Box>
   );
 };
