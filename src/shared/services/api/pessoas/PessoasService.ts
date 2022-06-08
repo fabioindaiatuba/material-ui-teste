@@ -2,13 +2,13 @@ import { Enviroment } from "../../../environment";
 import { Api } from "../axios-config";
 
 interface IListagemPessoa {
-  id: string;
+  id: number;
   email: string;
   cidadeId: number;
   nomeCompleto: string;
 }
 interface IDetalhePessoa {
-  id: string;
+  id: number;
   email: string;
   cidadeId: number;
   nomeCompleto: string;
@@ -34,7 +34,7 @@ const getAll = async (
         ),
       };
     }
-    return new Error("Erro ao listar pessoas");
+    return new Error("Erro ao listar os registros");
   } catch (error) {
     console.error(error);
     return new Error(
@@ -43,13 +43,62 @@ const getAll = async (
   }
 };
 
-const getById = async (): Promise<any> => {};
+const getById = async (id: number): Promise<IDetalhePessoa | Error> => {
+  try {
+    const { data } = await Api.get(`/pessoas/${id}`);
+    if (data) {
+      return data;
+    }
+    return new Error("Erro ao buscar o registro");
+  } catch (error) {
+    console.error(error);
+    return new Error(
+      (error as { message: string }).message || "Erro ao buscar o registro"
+    );
+  }
+};
 
-const create = async (): Promise<any> => {};
+const create = async (
+  dados: Omit<IDetalhePessoa, "id">
+): Promise<number | Error> => {
+  try {
+    const { data } = await Api.post<IDetalhePessoa>("/pessoas", dados);
+    if (data) {
+      return data.id;
+    }
+    return new Error("Erro ao criar registro");
+  } catch (error) {
+    console.error(error);
+    return new Error(
+      (error as { message: string }).message || "Erro ao criar registro"
+    );
+  }
+};
 
-const updateById = async (): Promise<any> => {};
+const updateById = async (
+  id: number,
+  dados: IDetalhePessoa
+): Promise<void | Error> => {
+  try {
+    await Api.put<IDetalhePessoa>(`/pessoas/${id}`, dados);
+  } catch (error) {
+    console.error(error);
+    return new Error(
+      (error as { message: string }).message || "Erro ao atualizar registro"
+    );
+  }
+};
 
-const deleteById = async (): Promise<any> => {};
+const deleteById = async (id: number): Promise<void | Error> => {
+  try {
+    await Api.delete<IDetalhePessoa>(`/pessoas/${id}`);
+  } catch (error) {
+    console.error(error);
+    return new Error(
+      (error as { message: string }).message || "Erro ao apagar registro"
+    );
+  }
+};
 
 export const PessoasService = {
   getAll,
