@@ -2,8 +2,33 @@
   "pessoas": [
     {
       "id": 1,
-      "nome": "Fabio",
-      "sobrenome": "Gonvalves"
+      "email": "fgoncalves@teste.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Fabio Gonçalves"
+    },
+    {
+      "id": 2,
+      "email": "fgoncalves@teste.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Guilherme Gonçalves"
+    },
+    {
+      "id": 3,
+      "email": "fgoncalves@teste.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Gustavo Gonçalves"
+    },
+    {
+      "id": 4,
+      "email": "fgoncalves@teste.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Joyce Angarten"
+    },
+    {
+      "id": 5,
+      "email": "fgoncalves@teste.com",
+      "cidadeId": 1,
+      "nomeCompleto": "Sonia Angarten"
     }
   ]
 }
