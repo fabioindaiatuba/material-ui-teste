@@ -105,6 +105,8 @@ export const ListagemPessoa: React.FC = () => {
               <TableRow>
                 <TableCell colSpan={3}>
                   <Pagination
+                    variant="outlined"
+                    shape="rounded"
                     page={pagina}
                     count={Math.ceil(totalCount / Enviroment.LIMITE_DE_LINHAS)}
                     onChange={(_, newPage) =>
