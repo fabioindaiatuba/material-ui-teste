@@ -2,6 +2,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -25,16 +26,24 @@ export const AppThemeProvider: React.FC<IPropsChildren> = ({ children }) => {
   const [themeName, setThemeName] = useState<"light" | "dark">("light");
 
   const toggleTheme = useCallback(() => {
-    setThemeName((oldThemeName) =>
-      oldThemeName === "light" ? "dark" : "light"
-    );
+    setThemeName((oldThemeName) => {
+      const toggle = oldThemeName === "light" ? "dark" : "light";
+      localStorage.setItem("theme", toggle);
+      return toggle;
+    });
   }, []);
 
   const theme = useMemo(() => {
     if (themeName === "light") return LightTheme;
-
     return DarkTheme;
   }, [themeName]);
+
+  useEffect(() => {
+    const storageTheme = localStorage.getItem("theme");
+    if (storageTheme) {
+      setThemeName(storageTheme === "light" ? "light" : "dark");
+    }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
