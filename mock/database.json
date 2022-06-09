@@ -19,22 +19,10 @@
       "nomeCompleto": "Gustavo Gonçalves"
     },
     {
-      "id": 4,
-      "email": "fgoncalves@teste.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Joyce Angarten"
-    },
-    {
       "id": 5,
       "email": "fgoncalves@teste.com",
       "cidadeId": 1,
       "nomeCompleto": "Sonia Angarten"
-    },
-    {
-      "id": 6,
-      "email": "fgoncalves@teste.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Fabio Gonçalves"
     },
     {
       "id": 7,
@@ -53,12 +41,6 @@
       "email": "fgoncalves@teste.com",
       "cidadeId": 1,
       "nomeCompleto": "Joyce Angarten"
-    },
-    {
-      "id": 10,
-      "email": "fgoncalves@teste.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Sonia Angarten"
     },
     {
       "id": 11,
