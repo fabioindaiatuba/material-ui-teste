@@ -2,15 +2,15 @@
   "pessoas": [
     {
       "id": 1,
+      "nomeCompleto": "Fabio Gonçalves",
       "email": "fgoncalves@teste.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Fabio Gonçalves"
+      "cidadeId": 1
     },
     {
       "id": 2,
+      "nomeCompleto": "Guilherme Angarten Gonçalves",
       "email": "fgoncalves@teste.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Guilherme Gonçalves"
+      "cidadeId": 1
     },
     {
       "id": 3,
