@@ -1,4 +1,14 @@
 {
+  "cidades": [
+    {
+      "nome": "Indaiatuba",
+      "id": 1
+    },
+    {
+      "nome": "Campinas",
+      "id": 2
+    }
+  ],
   "pessoas": [
     {
       "id": 1,
