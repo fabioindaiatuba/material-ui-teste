@@ -92,7 +92,7 @@ export const ListagemPessoa: React.FC = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Ações</TableCell>
+              <TableCell width={100}>Ações</TableCell>
               <TableCell>Nome completo</TableCell>
               <TableCell>e-mail</TableCell>
             </TableRow>
