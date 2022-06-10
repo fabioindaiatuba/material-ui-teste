@@ -149,6 +149,12 @@
       "email": "fgoncalves@teste.com",
       "cidadeId": 1,
       "nomeCompleto": "Joyce Angarten"
+    },
+    {
+      "id": 31,
+      "nomeCompleto": "José da silva JR",
+      "email": "ze@email.com",
+      "cidadeId": "1"
     }
   ]
 }
